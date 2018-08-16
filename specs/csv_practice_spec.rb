@@ -5,6 +5,7 @@ require 'minitest/spec'
 require 'minitest/autorun'
 require 'minitest/reporters'
 require 'minitest/pride'
+require "minitest/skip_dsl"
 
 require_relative '../lib/csv_practice'
 
@@ -53,7 +54,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  describe 'total_medals_per_country' do
+  xdescribe 'total_medals_per_country' do
     # Arrange
     data = load_data(OLYMPIC_DATA_FILENAME)
 
@@ -85,7 +86,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  describe 'Can create a total medal file' do
+  xdescribe 'Can create a total medal file' do
     it 'The file is created' do
       # Arrange
       data = load_data(OLYMPIC_DATA_FILENAME)
@@ -115,7 +116,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  describe 'All Gold Medal Winners' do
+  xdescribe 'All Gold Medal Winners' do
     # Arrange
     data = load_data(OLYMPIC_DATA_FILENAME)
 
@@ -146,7 +147,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  describe 'country_totals_sorted_by_country' do
+  xdescribe 'country_totals_sorted_by_country' do
     it 'orders all the total medal reports' do
       # Arrange
       data = load_data(OLYMPIC_DATA_FILENAME)
@@ -180,7 +181,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  describe 'athlete_height_in_inches' do
+  xdescribe 'athlete_height_in_inches' do
     it 'correctly converts the height to inches' do
       # Arrange
       data = load_data(OLYMPIC_DATA_FILENAME)
