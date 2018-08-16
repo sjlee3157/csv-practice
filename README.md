@@ -6,7 +6,7 @@ In this exercise you are asked to process a CSV file with Olympic Games data.  T
 
 In part one you are asked to create 3 methods and you will need to complete them in order:
 -   `load_data(filename)` - This method takes a file name and returns the data from the file as an array of Hashes.
--   `total_medals_per_country(olympic_data)`  - This method takes the array of hashes read in from the file in `load_data` and returns an array of hashes with each element having a country name (team), and number of medals that country (team) has won.
+-   `total_medals_per_country(olympic_data)`  - This method takes the array of hashes read in from the file in `load_data` and returns an array of hashes with each element having a country name (team), and number of medals that country (team) has won.  The "Medal" header for the data indicates if the athlete won ('Gold', 'Silver' 'Bronze') or not ('NA').
 -   `save_medal_totals(filename, medal_totals)` - This method writes the medal total information returned from `total_medals_per_country` to another CSV file provided by `filename`.
 
 There are a number of tests written to verify the correctness of your methods and you can gain insight into the expected structure of the method return values by examining the spec file.
