@@ -1,10 +1,13 @@
 # csv_practice.rb
 require 'csv'
 require 'awesome_print'
+require "pry"
 
 # Part 1 - CSV Practice
 def load_data(filename)
-
+  data = CSV.read(filename, headers:true)
+  data = data.map{ |row| row.to_h }
+  return data
 end
 
 def total_medals_per_country(olympic_data)
@@ -25,7 +28,7 @@ def metals_sorted_by_country(metal_totals)
 
 end
 
-def country_with_most_metals(metal_totals)
+def country_with_most_medals(metal_totals)
 
 end
 
