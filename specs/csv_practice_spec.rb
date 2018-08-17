@@ -14,10 +14,14 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 CSV_HEADERS = %w[ID Name Sex Age Height Weight Team NOC Games Year Season City Sport Event Medal]
 MEDAL_TOTALS_FILENAME = 'data/medal_totals.csv'
-OLYMPIC_DATA_FILENAME = 'data/athlete_events.csv' #REMOVE BEFORE FLIGHT
+OLYMPIC_DATA_FILENAME = 'data/test_athlete_events.csv' #REMOVE BEFORE FLIGHT
 VALID_MEDALS = %w(Gold Silver Bronze NA)
 
-describe "CSV file booby trap test" do
+#######################################################################
+# I wrote a spec just in case y'all put booby traps in the CSV file:
+#######################################################################
+
+xdescribe "CSV file booby trap test" do
   describe "2) country medal totals" do
     it "will have only values G, S, B, or NA for Medal key" do
       # Arrange + Act
@@ -39,13 +43,9 @@ describe "CSV file booby trap test" do
 
   end
 end
-# write spec: all values in :medal are G, S, B, or NA
-# write spec: all values in :team has string.size > 0 && < 10
-
-
 
 describe 'CSV Practice Methods' do
-  describe 'load_data' do
+  xdescribe 'load_data' do
     it 'returns an array of hashes' do
       # Arrange & Act
       data = load_data(OLYMPIC_DATA_FILENAME)
@@ -109,7 +109,6 @@ describe 'CSV Practice Methods' do
         country_total = total_medals.find do |medal_total|
           medal_total[:country] == country
         end
-
         expect(country_total[:total_medals]).must_equal correct_totals[country]
       end
     end
@@ -145,7 +144,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  xdescribe 'All Gold Medal Winners' do
+  describe 'All Gold Medal Winners' do
     # Arrange
     data = load_data(OLYMPIC_DATA_FILENAME)
 

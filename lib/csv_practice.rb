@@ -40,14 +40,14 @@ def save_medal_totals(filename, medal_totals)
 
 end
 
-# total_medals = total_medals_per_country(load_data("../data/test_athlete_events.csv"))
-# save_medal_totals("../data/medal_totals.csv", total_medals)
-
 # Part 2 - More Enumerable Practice
 
 def all_gold_medal_winners(olympic_data)
 
 end
+
+# ap all_gold_medal_winners(load_data("../data/test_athlete_events.csv"))
+
 
 def medals_sorted_by_country(medal_totals)
 
