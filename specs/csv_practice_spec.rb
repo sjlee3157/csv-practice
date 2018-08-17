@@ -14,7 +14,7 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 CSV_HEADERS = %w[ID Name Sex Age Height Weight Team NOC Games Year Season City Sport Event Medal]
 MEDAL_TOTALS_FILENAME = 'data/medal_totals.csv'
-OLYMPIC_DATA_FILENAME = 'data/test_athlete_events.csv' #REMOVE BEFORE FLIGHT
+OLYMPIC_DATA_FILENAME = 'data/athlete_events.csv' #REMOVE BEFORE FLIGHT
 VALID_MEDALS = %w(Gold Silver Bronze NA)
 
 #######################################################################
@@ -144,7 +144,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  describe 'All Gold Medal Winners' do
+  xdescribe 'All Gold Medal Winners' do
     # Arrange
     data = load_data(OLYMPIC_DATA_FILENAME)
 
@@ -175,7 +175,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  xdescribe 'country_totals_sorted_by_country' do
+  describe 'country_totals_sorted_by_country' do
     it 'orders all the total medal reports' do
       # Arrange
       data = load_data(OLYMPIC_DATA_FILENAME)

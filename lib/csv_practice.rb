@@ -45,14 +45,13 @@ end
 def all_gold_medal_winners(olympic_data)
   return olympic_data.map{|h| h["Medal"]=="Gold"? {"Name" => h["Name"], "Medal" => "GOLD"} : nil}.compact
 end
+##################################################################################
+def medals_sorted_by_country(medal_totals)
+  return sorted_medal_list = medal_totals.sort_by{|h|h[:country]}
+end
 
 # data = load_data("../data/test_athlete_events.csv")
-# ap all_gold_medal_winners(load_data("../data/test_athlete_events.csv"))
-
-
-def medals_sorted_by_country(medal_totals)
-
-end
+# ap medal_totals = total_medals_per_country(load_data("../data/test_athlete_events.csv"))
 
 def country_with_most_medals(medal_totals)
 
