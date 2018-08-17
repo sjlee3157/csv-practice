@@ -29,13 +29,19 @@ def total_medals_per_country(olympic_data)
 
 end
 
-# data = load_data("../data/test_athlete_events.csv")
-# medals = total_medals_per_country(data)
-# ap medals.class
-
 def save_medal_totals(filename, medal_totals)
 
+  #ap medal_totals = medal_totals.map{|h|h.flatten}
+  CSV.open(filename, "w", write_headers:true, headers:medal_totals.first.keys) do |f|
+    medal_totals.each do |a|
+      f << a.values
+    end
+  end
+
 end
+
+# total_medals = total_medals_per_country(load_data("../data/test_athlete_events.csv"))
+# save_medal_totals("../data/medal_totals.csv", total_medals)
 
 # Part 2 - More Enumerable Practice
 
