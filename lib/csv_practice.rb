@@ -43,9 +43,10 @@ end
 # Part 2 - More Enumerable Practice
 
 def all_gold_medal_winners(olympic_data)
-
+  return olympic_data.map{|h| h["Medal"]=="Gold"? {"Name" => h["Name"], "Medal" => "GOLD"} : nil}.compact
 end
 
+# data = load_data("../data/test_athlete_events.csv")
 # ap all_gold_medal_winners(load_data("../data/test_athlete_events.csv"))
 
 
