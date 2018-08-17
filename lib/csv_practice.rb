@@ -10,6 +10,8 @@ def load_data(filename)
   return data
 end
 
+#data = load_data("../data/test_athlete_events.csv") #Remove Before Flight
+
 def total_medals_per_country(olympic_data)
   # a of h to a of h
   # each hash truncated to 2 keys
