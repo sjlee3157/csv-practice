@@ -13,7 +13,25 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 CSV_HEADERS = %w[ID Name Sex Age Height Weight Team NOC Games Year Season City Sport Event Medal]
 MEDAL_TOTALS_FILENAME = 'data/medal_totals.csv'
-OLYMPIC_DATA_FILENAME = 'data/athlete_events.csv'
+OLYMPIC_DATA_FILENAME = 'data/test_athlete_events.csv' #RBF
+
+describe "CSV file booby trap test" do
+  describe "2) country medal totals" do
+    it "will have only valid values for :medal key"
+    # Arrange + Act
+    data = load_data(OLYMPIC_DATA_FILENAME)
+    # Assert
+    valid_values = %w(G S B NA)
+    data.each do |row|
+      expect(valid_values.include?(row[:medal]).must_be true
+    end
+    end
+  end
+end
+# write spec: all values in :medal are G, S, B, or NA
+# write spec: all values in :team has string.size > 0 && < 10
+
+
 
 describe 'CSV Practice Methods' do
   describe 'load_data' do
@@ -166,7 +184,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  describe 'total_medals_per_country' do
+  xdescribe 'total_medals_per_country' do
     it 'returns the right value' do
       # Arrange
       data = load_data(OLYMPIC_DATA_FILENAME)

@@ -11,7 +11,15 @@ def load_data(filename)
 end
 
 def total_medals_per_country(olympic_data)
+  # a of h to a of h
+  # each hash truncated to 2 keys
+  # new key :total_medals => 0 default
+  # keep only key :country, which used to be :team
+  # h[:total_medals] += 1 if h[:medal] is G, S, or B.
 
+  # write spec: all values in :medal are G, S, B, or NA
+  # write spec: all values in :team has string.size > 0 && < 10
+  return medals #a of h
 end
 
 def save_medal_totals(filename, medal_totals)
@@ -24,11 +32,11 @@ def all_gold_medal_winners(olympic_data)
 
 end
 
-def metals_sorted_by_country(metal_totals)
+def medals_sorted_by_country(medal_totals)
 
 end
 
-def country_with_most_medals(metal_totals)
+def country_with_most_medals(medal_totals)
 
 end
 
