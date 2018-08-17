@@ -3,6 +3,8 @@ require 'csv'
 require 'awesome_print'
 require "pry"
 
+WINNING_MEDALS = %w(Gold Silver Bronze)
+
 # Part 1 - CSV Practice
 def load_data(filename)
   data = CSV.read(filename, headers:true)
@@ -10,19 +12,26 @@ def load_data(filename)
   return data
 end
 
-#data = load_data("../data/test_athlete_events.csv") #Remove Before Flight
-
 def total_medals_per_country(olympic_data)
-  # a of h to a of h
-  # each hash truncated to 2 keys
-  # new key :total_medals => 0 default
-  # keep only key :country, which used to be :team
-  # h[:total_medals] += 1 if h[:medal] is G, S, or B.
 
-  # write spec: all values in :medal are G, S, B, or NA
-  # write spec: all values in :team has string.size > 0 && < 10
-  return medals #a of h
+  countries = olympic_data.flat_map{|h| h["Team"]}.uniq
+  total_medals = countries.map{ |v| Hash[:country, v]}
+  total_medals.each { |h| h[:total_medals] = 0 }
+
+  olympic_data.each do |h_olympic|
+    if WINNING_MEDALS.include?(h_olympic["Medal"])
+      country = total_medals.find {|h_medals| h_medals[:country] == h_olympic["Team"]}
+      country[:total_medals] += 1
+    end
+  end
+
+  return total_medals
+
 end
+
+# data = load_data("../data/test_athlete_events.csv")
+# medals = total_medals_per_country(data)
+# ap medals.class
 
 def save_medal_totals(filename, medal_totals)
 
