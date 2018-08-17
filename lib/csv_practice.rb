@@ -54,9 +54,14 @@ def country_with_most_medals(medal_totals)
   return most_medals = medal_totals.max_by{|h|h[:total_medals]}
 end
 
-# data = load_data("../data/test_athlete_events.csv")
+def athlete_height_in_inches(olympic_data)
+  converted_data = olympic_data.map{|h| h["Height"] = (h["Height"].to_f/2.5).to_s}
+  return converted_data
+end
+
+
+data = load_data("../data/test_athlete_events.csv")
+ap athlete_height_in_inches(data)
+ap data.first.keys
 # medal_totals = total_medals_per_country(data)
 ##################################################################################
-def athlete_height_in_inches(olympic_data)
-
-end
