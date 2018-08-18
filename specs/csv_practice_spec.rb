@@ -14,14 +14,14 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 CSV_HEADERS = %w[ID Name Sex Age Height Weight Team NOC Games Year Season City Sport Event Medal]
 MEDAL_TOTALS_FILENAME = 'data/medal_totals.csv'
-OLYMPIC_DATA_FILENAME = 'data/test_athlete_events.csv' #REMOVE BEFORE FLIGHT
+OLYMPIC_DATA_FILENAME = 'data/athlete_events.csv'
 VALID_MEDALS = %w(Gold Silver Bronze NA)
 
 #######################################################################
 # I wrote a spec just in case y'all put booby traps in the CSV file:
 #######################################################################
 
-xdescribe "CSV file booby trap test" do
+describe "CSV file booby trap test" do
   describe "2) country medal totals" do
     it "will have only values G, S, B, or NA for Medal key" do
       # Arrange + Act
@@ -45,7 +45,7 @@ xdescribe "CSV file booby trap test" do
 end
 
 describe 'CSV Practice Methods' do
-  xdescribe 'load_data' do
+  describe 'load_data' do
     it 'returns an array of hashes' do
       # Arrange & Act
       data = load_data(OLYMPIC_DATA_FILENAME)
@@ -83,7 +83,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  xdescribe 'total_medals_per_country' do
+  describe 'total_medals_per_country' do
     # Arrange
     data = load_data(OLYMPIC_DATA_FILENAME)
 
@@ -114,7 +114,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  xdescribe 'Can create a total medal file' do
+  describe 'Can create a total medal file' do
     it 'The file is created' do
       # Arrange
       data = load_data(OLYMPIC_DATA_FILENAME)
@@ -144,7 +144,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  xdescribe 'All Gold Medal Winners' do
+  describe 'All Gold Medal Winners' do
     # Arrange
     data = load_data(OLYMPIC_DATA_FILENAME)
 
@@ -175,7 +175,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  xdescribe 'country_totals_sorted_by_country' do
+  describe 'country_totals_sorted_by_country' do
     it 'orders all the total medal reports' do
       # Arrange
       data = load_data(OLYMPIC_DATA_FILENAME)
@@ -194,7 +194,7 @@ describe 'CSV Practice Methods' do
     end
   end
 
-  xdescribe 'total_medals_per_country' do
+  describe 'total_medals_per_country' do
     it 'returns the right value' do
       # Arrange
       data = load_data(OLYMPIC_DATA_FILENAME)
