@@ -3,10 +3,10 @@ require 'csv'
 require 'awesome_print'
 require "pry"
 
-WINNING_MEDALS = %w(Gold Silver Bronze)
 OLYMPIC_DATA_FILENAME = '../data/athlete_events.csv'
+TEST_DATA_FILENAME = '../data/test_athlete_events.csv'
+WINNING_MEDALS = %w(Gold Silver Bronze)
 ATHLETE_HEIGHT_IN_INCHES_FILENAME = '../data/athlete_height_in_inches.csv'
-TEST_DATA_FILENAME = '../data/test_athlete_data.csv'
 
 # Part 1 - CSV Practice
 def load_data(filename)
