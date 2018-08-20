@@ -3,9 +3,10 @@ require 'csv'
 require 'awesome_print'
 require "pry"
 
+OLYMPIC_DATA_FILENAME = '../data/athlete_events.csv'
+TEST_DATA_FILENAME = '../data/test_athlete_events.csv'
 WINNING_MEDALS = %w(Gold Silver Bronze)
 ATHLETE_HEIGHT_IN_INCHES_FILENAME = '../data/athlete_height_in_inches.csv'
-OLYMPIC_DATA_FILENAME = '../data/athlete_events.csv'
 
 # Part 1 - CSV Practice
 def load_data(filename)
@@ -56,7 +57,8 @@ end
 
 def athlete_height_in_inches(olympic_data)
   heights = {"Height" => 0}
-  return converted_data = olympic_data.map{|h| h.merge(heights){|k,v|(v.to_i)/2.5}}
+  p converted_data = olympic_data.map{|h| h.merge(heights){|k,v|(v.to_i)/2.5}}
+  return converted_data = converted_data.map{|k,v| if k == "Height" then "Height in Inches" end}
 end
 
 def save_athlete_height_in_inches(filename, converted_data)
