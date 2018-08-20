@@ -57,8 +57,7 @@ end
 
 def athlete_height_in_inches(olympic_data)
   heights = {"Height" => 0}
-  p converted_data = olympic_data.map{|h| h.merge(heights){|k,v|(v.to_i)/2.5}}
-  return converted_data = converted_data.map{|k,v| if k == "Height" then "Height in Inches" end}
+  return converted_data = olympic_data.map{|h| h.merge(heights){|k,v|(v.to_i)/2.5}}
 end
 
 def save_athlete_height_in_inches(filename, converted_data)
