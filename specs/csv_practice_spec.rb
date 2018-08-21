@@ -12,8 +12,14 @@ require_relative '../lib/csv_practice'
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 CSV_HEADERS = %w[ID Name Sex Age Height Weight Team NOC Games Year Season City Sport Event Medal]
-MEDAL_TOTALS_FILENAME = '../data/medal_totals.csv'
+MEDAL_TOTALS_FILENAME = 'data/medal_totals.csv'
 VALID_MEDALS = %w(Gold Silver Bronze NA)
+OLYMPIC_DATA_FILENAME = 'data/athlete_events.csv'
+TEST_DATA_FILENAME = 'data/test_athlete_events.csv'
+WINNING_MEDALS = %w(Gold Silver Bronze)
+ATHLETE_HEIGHT_IN_INCHES_FILENAME = 'data/athlete_height_in_inches.csv'
+
+
 
 #######################################################################
 # I wrote a spec just in case y'all put booby traps in the CSV file:

@@ -3,11 +3,6 @@ require 'csv'
 require 'awesome_print'
 require "pry"
 
-OLYMPIC_DATA_FILENAME = '../data/athlete_events.csv'
-TEST_DATA_FILENAME = '../data/test_athlete_events.csv'
-WINNING_MEDALS = %w(Gold Silver Bronze)
-ATHLETE_HEIGHT_IN_INCHES_FILENAME = '../data/athlete_height_in_inches.csv'
-
 # Part 1 - CSV Practice
 def load_data(filename)
   data = CSV.read(filename, headers:true)
@@ -66,4 +61,4 @@ def save_athlete_height_in_inches(filename, converted_data)
   end
 end
 
-save_athlete_height_in_inches(ATHLETE_HEIGHT_IN_INCHES_FILENAME, athlete_height_in_inches(load_data(OLYMPIC_DATA_FILENAME)))
+# save_athlete_height_in_inches(ATHLETE_HEIGHT_IN_INCHES_FILENAME, athlete_height_in_inches(load_data(OLYMPIC_DATA_FILENAME)))
